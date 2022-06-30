@@ -157,3 +157,53 @@ def draw_turtle_spider():
 
 
 #draw_turtle_spider()
+
+
+def draw_turtle_spiral():
+    """
+    Exercise 7 Рисуем исполнителем Черепаха спираль
+    :return:
+    """
+
+    import turtle
+    import math
+    turtle.speed(2)
+    turtle.shape('turtle')
+    N = int(input('Введите количество витков  в спирали: '))
+    n=int(input('Введите количество углов в мноноугольнике: ')) # Задаём количество углов в многоугольнике
+    h = int(input('Введите шаг спирали: '))
+    w=0
+    for j in range(1,N+1):
+        a = 180-((n-2)/n)*180 # Рассчитываем угол поворота исполнитея при рисовании многоугольника
+        x=math.pi*(360-2*a)/180 # Рассчёт градусной меры дуги в радианах
+        for i in range(1,n+1):
+            w+=x
+            turtle.forward((h/2*math.pi)*w)
+            turtle.left(w)
+
+    turtle.exitonclick()
+
+
+#draw_turtle_spiral()
+
+def draw_turtle_spiral2():
+    """
+    Exercise 7 Рисуем исполнителем Черепаха спираль
+    :return:
+    """
+
+    import turtle
+    import math
+    turtle.speed(50)
+    turtle.shape('turtle')
+    N = int(input('Введите количество шагов  в спирали: '))
+    #n=int(input('Введите количество углов в мноноугольнике: ')) # Задаём количество углов в многоугольнике
+    #h = int(input('Введите шаг спирали: '))
+    #w=0
+    for j in range(1,N+1):
+        turtle.forward(j*0.001)
+        turtle.left(1)
+
+    turtle.exitonclick()
+
+draw_turtle_spiral2()
